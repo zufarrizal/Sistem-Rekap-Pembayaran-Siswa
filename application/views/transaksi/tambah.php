@@ -25,7 +25,7 @@
                                 <label for="niss">NISS</label><small class="text-danger"><?= form_error('niss'); ?></small>
                                 <select class="custom-select select2" id="niss" name="niss" style="width: 100%;">
                                     <?php foreach ($siswa as $sw) : ?>
-                                        <option value="<?= $sw['niss']; ?>"><?= $sw['niss']; ?></option>
+                                        <option value="<?= $sw['niss']; ?>"><?= $sw['niss']; ?> - <?= $sw['nama']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

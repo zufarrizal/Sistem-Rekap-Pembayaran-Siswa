@@ -25,7 +25,11 @@
                                 <input type="hidden" class="form-control" id="id" name="id" value="<?= $transaksi['id_trx'] ?>">
                                 <div class="form-group">
                                     <label for="niss">NISS</label><small class="text-danger"><?= form_error('niss'); ?></small>
-                                    <input type="text" class="form-control" id="niss" name="niss" value="<?= $transaksi['niss'] ?>" readonly>
+                                    <input type="text" class="form-control" id="niss" name="niss" value="<?= $transaksi['niss']; ?>" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nama">Nama</label><small class="text-danger"><?= form_error('nama'); ?></small>
+                                    <input type="text" class="form-control" id="nama" name="nama" value="<?= $transaksi['nama']; ?>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="jenis">Jenis</label><small class="text-danger"><?= form_error('jenis'); ?></small>

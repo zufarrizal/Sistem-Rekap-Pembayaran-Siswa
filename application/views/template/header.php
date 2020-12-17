@@ -85,6 +85,7 @@
                     <li class="header">DATA PEMBAYARAN</li>
                     <li><a href="<?= base_url('jenis'); ?>"><i class="fa fa-credit-card"></i> <span>Jenis Pembayaran</span></a></li>
                     <li><a href="<?= base_url('transaksi'); ?>"><i class="fa fa-money"></i> <span>Transaksi Pembayaran</span></a></li>
+                    <li><a href="<?= base_url('cetak'); ?>"><i class="fa fa-money"></i> <span>Cetak Pembayaran</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->
