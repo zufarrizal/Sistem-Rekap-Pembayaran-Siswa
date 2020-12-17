@@ -76,9 +76,17 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+
+	// DB LOCAL
 	'username' => 'root',
 	'password' => '',
 	'database' => 'ci-walid',
+
+	// DB SERVER
+	// 'username' => 'zufq9565_walid',
+	// 'password' => 'EZx(6vc5=ZbV',
+	// 'database' => 'zufq9565_walid',
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
