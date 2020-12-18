@@ -40,8 +40,8 @@
                                         <td><?= $usr['username']; ?></td>
                                         <td><?= $usr['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/ubah/') . $usr['id_user']; ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Ubah</a>
-                                            <a href="<?= base_url('admin/hapus/') . $usr['id_user']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus?')"><i class=" fa fa-trash"></i> Hapus</a>
+                                            <a href="<?= base_url('admin/ubah/') . $usr['id_user']; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i> Ubah</a>
+                                            <a href="<?= base_url('admin/hapus/') . $usr['id_user']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin Hapus?')"><i class=" fa fa-trash"></i> Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

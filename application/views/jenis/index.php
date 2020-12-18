@@ -40,8 +40,8 @@
                                         <td><?= $jns['jenisp']; ?></td>
                                         <td>Rp. <?= $jns['total']; ?>,-</td>
                                         <td>
-                                            <a href="<?= base_url('jenis/ubah/') . $jns['id_jenis']; ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Ubah</a>
-                                            <a href="<?= base_url('jenis/hapus/') . $jns['id_jenis']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus?')"><i class=" fa fa-trash"></i> Hapus</a>
+                                            <a href="<?= base_url('jenis/ubah/') . $jns['id_jenis']; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i> Ubah</a>
+                                            <a href="<?= base_url('jenis/hapus/') . $jns['id_jenis']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin Hapus?')"><i class=" fa fa-trash"></i> Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
