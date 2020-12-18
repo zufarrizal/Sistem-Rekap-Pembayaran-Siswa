@@ -108,45 +108,39 @@ class Transaksi extends CI_Controller
             $this->load->view('transaksi/ubah', $data);
             $this->load->view('template/footer');
         } else {
+            // Mengambil Data Inputan
+            $id = $this->input->post('id');
             $niss = htmlspecialchars($this->input->post('niss'), true);
+            $swa = $this->db->get_where('siswa', ['niss' => $niss])->row_array();
             $jenis = htmlspecialchars($this->input->post('jenis'), true);
-            $filter = array("niss" => $niss, "jenis" => $jenis);
-            $trax = $this->db->get_where('transaksi', $filter)->num_rows();
-            if ($trax > 1) {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger">Transaksi Sudah Pernah Ditambahkan!</div>');
-                redirect('transaksi/tambah/');
+
+
+            $jns = $this->db->get_where('jenis', ['jenisp' => $jenis])->row_array();
+            $total = $jns['total'];
+            $nominal = htmlspecialchars($this->input->post('nominal'), true);
+            $hitung = $total - $nominal;
+
+            if ($hitung > 0) {
+                $status = 0;
             } else {
-                // Mengambil Data Inputan
-                $id = $this->input->post('id');
-                $swa = $this->db->get_where('siswa', ['niss' => $niss])->row_array();
-
-                $jns = $this->db->get_where('jenis', ['jenisp' => $jenis])->row_array();
-                $total = $jns['total'];
-                $nominal = htmlspecialchars($this->input->post('nominal'), true);
-                $hitung = $total - $nominal;
-
-                if ($hitung > 0) {
-                    $status = 0;
-                } else {
-                    $status = 1;
-                }
-
-                $tanggal = $this->input->post('tanggal');
-
-                // Set Update Database
-                $this->db->set('niss', $niss);
-                $this->db->set('nama', $swa['nama']);
-                $this->db->set('kelas', $swa['kelas']);
-                $this->db->set('jenis', $jenis);
-                $this->db->set('nominal', $nominal);
-                $this->db->set('status', $status);
-                $this->db->set('kurang', $hitung);
-                $this->db->set('tanggal', $tanggal);
-                $this->db->where('id_trx', $id);
-                $this->db->update('transaksi');
-                // Dikembalikan Ke Data User
-                redirect('transaksi');
+                $status = 1;
             }
+
+            $tanggal = $this->input->post('tanggal');
+
+            // Set Update Database
+            $this->db->set('niss', $niss);
+            $this->db->set('nama', $swa['nama']);
+            $this->db->set('kelas', $swa['kelas']);
+            $this->db->set('jenis', $jenis);
+            $this->db->set('nominal', $nominal);
+            $this->db->set('status', $status);
+            $this->db->set('kurang', $hitung);
+            $this->db->set('tanggal', $tanggal);
+            $this->db->where('id_trx', $id);
+            $this->db->update('transaksi');
+            // Dikembalikan Ke Data User
+            redirect('transaksi');
         }
     }
 

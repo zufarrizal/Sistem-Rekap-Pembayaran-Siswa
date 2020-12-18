@@ -18,7 +18,6 @@
                     <div class="box-header">
                         <h3 class="box-title">Form <?= $title ?></h3>
                     </div>
-                    <?= $this->session->flashdata('message'); ?>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form role="form" method="POST" action="">
