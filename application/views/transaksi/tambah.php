@@ -18,6 +18,7 @@
                     <div class="box-header">
                         <h3 class="box-title">Form <?= $title ?></h3>
                     </div>
+                    <?= $this->session->flashdata('message'); ?>
                     <!-- /.box-header -->
                     <form role="form" method="POST" action="">
                         <div class="box-body">
@@ -39,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nominal">Nominal</label><small class="text-danger"><?= form_error('nominal'); ?></small>
-                                <input type="text" class="form-control" id="nominal" name="nominal" placeholder="Nominal">
+                                <input type="text" class="form-control" id="nominal" name="nominal" placeholder="Nominal" value="<?= set_value('nominal'); ?>">
                             </div>
                             <div class="form-group">
                                 <label for="tanggal">Tanggal</label><small class="text-danger"><?= form_error('tanggal'); ?></small>
@@ -47,7 +48,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="date" class="form-control pull-right" id="tanggal" name="tanggal">
+                                    <input type="date" class="form-control pull-right" id="tanggal" name="tanggal" value="<?= set_value('tanggal'); ?>" required>
                                 </div>
                             </div>
                         </div>

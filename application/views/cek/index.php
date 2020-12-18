@@ -32,6 +32,8 @@
                                     <th>Tanggal</th>
                                 </tr>
                             </thead>
+                            <?php $kurang = 0;
+                            $total = 0; ?>
                             <tbody>
                                 <?php foreach ($transaksi as $trx) : ?>
                                     <?php
@@ -60,6 +62,10 @@
                                             <td>Rp. <?= $qu['kurang']; ?>,-</td>
                                             <td><?= $qu['tanggal']; ?></td>
                                         </tr>
+                                        <?php
+                                        $kurang = $kurang + $qu['kurang'];
+                                        $total = $total + $qu['nominal'];
+                                        ?>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </tbody>
@@ -75,6 +81,8 @@
                                 </tr>
                             </tfoot>
                         </table>
+                        <h4 class="text-center">Total : Rp. <?= $total; ?>,-</h4>
+                        <h4 class="text-center">Kurang : Rp. <?= $kurang; ?>,-</h4>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">

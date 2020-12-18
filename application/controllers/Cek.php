@@ -17,8 +17,7 @@ class Cek extends CI_Controller
     {
         // Memuat Data Pengakses
         $data['user'] = $this->db->get_where('siswa', ['niss' => $this->session->userdata('niss')])->row_array();
-        // var_dump($data['user']);
-        // die;
+
         // Memuat Semua Data Tabel
         $data['transaksi'] = $this->Transaksi_Model->getAllTransaksi();
         $data['kelas'] = $this->Kelas_Model->getAllKelas();
